@@ -21,10 +21,6 @@ app.get('/quotes', (req, res) => {
     res.render("quotes.ejs", {quotes});
 });
 
-app.get('/miscelanous', (req, res) => {
-    res.render("miscelanous.ejs");
-});
-
 app.get('/adaugare', (req, res) => {
     res.render("adaugare.ejs");
 });
