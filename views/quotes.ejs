@@ -11,8 +11,8 @@
     <% quotes.forEach(citat => { %>
        <ul>
             <li>
-                <h1> <%= citat.titlu %> </h1>
-                <h2> <a href="/stergeCitat/<%citat.id%>"> Sterge Citat </a> </h2>
+                <h1> <i> "<%= citat.titlu %>" </i> </h1>
+                <h2> <a href="/stergeCitat/<%=citat.id%>"> Sterge Citat </a> </h2>
             </li>
         </ul> 
     <% }); %>

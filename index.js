@@ -81,6 +81,13 @@ app.post('/submitCitat', (req, res) => {
     res.redirect('/quotes');
 });
 
+app.get('/stergeCitat/:id', (req, res) => {
+    const citatId = req.params.id;
+    const citatIndex = quotes.findIndex(citat => citat.id == citatId);
+    quotes.splice(citatIndex, 1);
+    res.redirect('/quotes');
+});
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}.`);
 });
