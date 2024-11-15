@@ -16,7 +16,18 @@
       </style>
 </head>
 <body>
-    <%-include("./partials/sidebar.ejs")%>
-    
+    <div class="d-flex" style="height: 100vh;">
+        <%- include("./partials/sidebar.ejs") %>
+        <div class="d-flex flex-column">
+            <div class="flex-grow-1 d-flex justify-content-center align-items-center p-4 text-center">
+                <h1 class="display-3">
+                    Welcome on my blog web app. <br> 
+                    If you want to post something, head over to the Posts tab. <br> 
+                    If you want to leave some wisdom, head over to the Quotes tab.
+                </h1>
+            </div>
+            <%- include("./partials/footer.ejs") %>
+        </div>
+    </div>
 </body>
 </html>
