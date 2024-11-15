@@ -30,10 +30,33 @@ app.get('/adaugare', (req, res) => {
 
 app.post('/submit', (req, res) => {
     const newPost ={
+        id: Date.now().toString(),
         title: req.body.title,
         descriere: req.body.descriere
     };
     posts.push(newPost);
+    res.redirect('/posts');
+});
+
+app.get('/edit/:id', (req, res) => {
+    const postId = req.params.id;
+    const postToEdit = posts.find(post => post.id == postId);
+
+    if(postToEdit) {
+        res.render('editare.ejs', {post: postToEdit});
+    } else {
+        res.redirect('/posts.ejs');
+    }
+});
+
+app.post('/edit/:id', (req, res) => {
+    const postId = req.params.id;
+    const postIndex = posts.findIndex(post => post.id == postId);
+
+    if(postIndex !== -1) {
+        posts[postIndex].title = req.body["title"];
+        posts[postIndex].descriere = req.body["descriere"];
+    }
     res.redirect('/posts');
 });
 
