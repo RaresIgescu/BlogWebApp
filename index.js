@@ -60,6 +60,13 @@ app.post('/edit/:id', (req, res) => {
     res.redirect('/posts');
 });
 
+app.get("/sterge/:id", (req, res) => {
+    const postId = req.params.id;
+    const postIndex = posts.findIndex(post => post.id == postId);
+    posts.splice(postIndex, 1);
+    res.redirect('/posts');
+})
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}.`);
 });

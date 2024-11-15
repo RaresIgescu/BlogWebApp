@@ -13,7 +13,8 @@
             <li>
                 <h2><%= postare.title %></h2>
                 <p><%= postare.descriere %> </p>
-                <h3><a href="/edit/<%= postare.id%>">Editeaza postare</h3>
+                <h3><a href="/edit/<%= postare.id%>">Editeaza postare</a></h3>
+                <h3><a href="/sterge/<%= postare.id%>">Sterge postare</a></h3>
             </li>
         <% }); %>
     </ul>
