@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1> Quotes </h1>
+    <h1> Vrei sa adaugi un citat? Apasa <a href="/adaugareCitat"> aici </a> </h1>
+    <% quotes.forEach(citat => { %>
+       <ul>
+            <li>
+                <h1> <%= citat.titlu %> </h1>
+                <h2> <a href="/stergeCitat/<%citat.id%>"> Sterge Citat </a> </h2>
+            </li>
+        </ul> 
+    <% }); %>
 </body>
 </html>

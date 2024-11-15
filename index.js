@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 const app = express();
 const port = 3000;
 const posts = [];
+const quotes = [];
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -17,7 +18,7 @@ app.get('/posts', (req, res) => {
 });
 
 app.get('/quotes', (req, res) => {
-    res.render("quotes.ejs");
+    res.render("quotes.ejs", {quotes});
 });
 
 app.get('/miscelanous', (req, res) => {
@@ -66,6 +67,19 @@ app.get("/sterge/:id", (req, res) => {
     posts.splice(postIndex, 1);
     res.redirect('/posts');
 })
+
+app.get('/adaugareCitat', (req, res) => {
+    res.render("adaugareCitat.ejs");
+});
+
+app.post('/submitCitat', (req, res) => {
+    const newQuote = {
+        id: Date.now().toString(),
+        titlu: req.body["title"],
+    };
+    quotes.push(newQuote);
+    res.redirect('/quotes');
+});
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}.`);
