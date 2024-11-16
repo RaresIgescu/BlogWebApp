@@ -8,20 +8,24 @@
 <body>
     <div class="d-flex">
         <%-include("./partials/sidebar.ejs")%>
-        <div class="d-flex flex-column justify-content-center text-center align-items-center">
-            <div class = "flex-grow-1 p-4">
-                <h1> Quotes </h1>
-                <h2> Vrei sa adaugi un citat? Apasa <a href="/adaugareCitat"> aici </a> </h2>
-                <% quotes.forEach(citat => { %>
-                <ul>
-                        <li>
-                            <h1> <i> "<%= citat.titlu %>" </i> </h1>
-                            <h2> <a href="/stergeCitat/<%=citat.id%>"> Sterge Citat </a> </h2>
-                        </li>
-                    </ul> 
-                <% }); %>
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center align-items-center p-4 text-center" style="height: 100vh;">
+                <div class="d-flex flex-grow-1">
+                    <div>
+                        <h1> Quotes </h1>
+                        <h2> Vrei sa adaugi un citat? Apasa <a href="/adaugareCitat"> aici </a> </h2>
+                        <% quotes.forEach(citat => { %>
+                        <ul>
+                            <li>
+                                <h1> <i> "<%= citat.titlu %>" </i> </h1>
+                                <h2> <a href="/stergeCitat/<%=citat.id%>"> Sterge Citat </a> </h2>
+                            </li>
+                        <% }); %>
+                        </ul> 
+                    </div>
                 </div>
-            <%- include("./partials/footer.ejs") %>
+                <%- include("./partials/footer.ejs") %>
+            </div>
         </div>
     </div>
 </body>
