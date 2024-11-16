@@ -14,10 +14,10 @@
                     <div>
                         <h1> Quotes </h1>
                         <h2> Vrei sa adaugi un citat? Apasa <a href="/adaugareCitat"> aici </a> </h2>
+                        <ul style="list-style: none;">
                         <% quotes.forEach(citat => { %>
-                        <ul>
-                            <li>
-                                <h1> <i> "<%= citat.titlu %>" </i> </h1>
+                            <li class="m-3">
+                                <h1 class="overflow-wrap: break-word"> <i> "<%= citat.titlu %>" </i> </h1>
                                 <h2> <a href="/stergeCitat/<%=citat.id%>"> Sterge Citat </a> </h2>
                             </li>
                         <% }); %>
