@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adaugare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <form action="/submit" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="descrirere">Desciere:</label>
-        <textarea id="descriere" name="descriere" rows="4" required></textarea>
-        
-        <button type="submit">Posteaza</button>
-    </form>
+    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+        <h1> Introduceti datele necesare. </h1>
+        <form action="/submit" method="POST" class="w-100" style="max-width: 500px;">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control form-control-sm" id="title" name="title" placeholder="Title" required>
+                <label for="title">Title:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control form-control-sm" id="descriere" name="descriere" placeholder="Descriere" rows="4" required></textarea>
+                <label for="descriere">Descriere:</label>
+            </div>
+            <button type="submit" class="btn btn-success">Posteaza</button>
+        </form>
+    </div>
 </body>
 </html>
