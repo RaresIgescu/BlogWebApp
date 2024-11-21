@@ -17,8 +17,8 @@
                         <ul style="list-style: none;">
                         <% quotes.forEach(citat => { %>
                             <li class="m-3">
-                                <h1 class="overflow-wrap: break-word"> <i> "<%= citat.titlu %>" </i> </h1>
-                                <h2> <a href="/stergeCitat/<%=citat.id%>"> Sterge Citat </a> </h2>
+                                <h1 style="overflow-wrap: break-word;"> <i style="overflow-wrap: break-word;"> "<%= citat.titlu %>" </i> </h1>
+                                <button class="btn btn-danger"> <a href="/stergeCitat/<%=citat.id%>" style="text-decoration: none; color: white;"> Sterge Citat </a> </button>
                             </li>
                         <% }); %>
                         </ul> 

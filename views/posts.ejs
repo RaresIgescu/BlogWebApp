@@ -18,7 +18,7 @@
                         <ul style="list-style: none;">
                             <% posts.forEach(postare => { %>
                                 <li class="m-3">
-                                    <h2><%= postare.title %></h2>
+                                    <h2 style="overflow-wrap: break-word;"><%= postare.title %></h2>
                                     <p style="overflow-wrap: break-word;"><%= postare.descriere %></p>
                                     <button class="btn btn-success"><a href="/edit/<%= postare.id%>" style="text-decoration: none; color: white;">Editeaza postare</a></button> <button class="btn btn-danger"><a href="/sterge/<%= postare.id%>" style="text-decoration: none; color: white;">Sterge postare</a></button>
                                 </li>
