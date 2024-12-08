@@ -41,3 +41,11 @@ This is a simple Web Blog application built with Node.js and Express.js. It allo
    ```bash
    git clone https://github.com/yourusername/web-blog-app.git
    cd web-blog-app
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+
+3. **Run**
+   ```bash
+   node index.js
